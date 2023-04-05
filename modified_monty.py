@@ -6,12 +6,11 @@ outside = 0
 for i in tqdm(range(10000000)):
     containers = [False for i in range(4)]
     # is inside
-    if random.random() >= .2:
-        containers[random.randrange(len(containers))] = True
-    else:
-        # outside
+    if random.random() < .2:
         outside+=1
         continue
+
+    containers[random.randrange(len(containers))] = True
 
     # randomly open 3
     for i in range(3):
@@ -25,4 +24,4 @@ for i in tqdm(range(10000000)):
 total = outside+contains
 print(f"outside: {outside}")
 print(f"contains: {contains}")
-print(f"percentage outside: {contains/total}")
+print(f"percentage inside: {contains/total}")
