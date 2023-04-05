@@ -5,7 +5,7 @@ contains = 0
 outside = 0
 for i in tqdm(range(10000000)):
     containers = [False for i in range(4)]
-    # is inside
+    # is outside
     if random.random() < .2:
         outside+=1
         continue
